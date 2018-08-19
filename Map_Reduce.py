@@ -1,8 +1,6 @@
 ########################################
-## Template Code for Big Data Analytics
-## assignment 1 - part I, at Stony Brook Univeristy
-## Fall 2017
-
+# Author : Sumukha Rajapuram Mohan
+# Big Data Assignment-1 due on 09/16/2017
 
 import sys
 from abc import ABCMeta, abstractmethod
@@ -24,8 +22,7 @@ class MyMapReduce:#[TODO]
         self.data = data  #the "file": list of all key value pairs
         self.num_map_tasks=num_map_tasks #how many processes to spawn as map tasks
         self.num_reduce_tasks=num_reduce_tasks # " " " as reduce tasks
-
-    ###########################################################   
+  
     #programmer methods (to be overridden by inheriting class)
 
     @abstractmethod
@@ -38,8 +35,7 @@ class MyMapReduce:#[TODO]
         print("Need to override reduce")
         
 
-    ###########################################################
-    #System Code: What the map reduce backend handles
+    #Mapper Code: What the map reduce backend handles
 
     def mapTask(self, data_chunk, namenode_m2r): #[DONE]
         #runs the mappers and assigns each k,v to a reduce task
@@ -55,12 +51,12 @@ class MyMapReduce:#[TODO]
 
     def partitionFunction(self,k): #[TODO]
         #given a key returns the reduce task to send it
-	#pass		#~~~~~~~~~~~~~~~~
+	#pass		
         #return os.getpid()
         import random
         return random.randint(0,self.num_reduce_tasks-1)
 
-    def reduceTask(self, kvs, namenode_fromR): #[TODO]
+    def reduceTask(self, kvs, namenode_fromR): 
         #sort all values for each key (can use a list of dictionary)
 	
 	#This sorting and shuffling is done after map and just before instantiating reducers,I have added this code in run_system
