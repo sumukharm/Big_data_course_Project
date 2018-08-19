@@ -1,3 +1,6 @@
+# Author : Sumukha Rajapuram Mohan
+# LSH/BUCKETING/Streaming/hashing for on-fly clustering on similar regions of Islandia
+
 import os
 from pyspark import SparkConf, SparkContext
 from tifffile import TiffFile
