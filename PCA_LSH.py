@@ -1,5 +1,5 @@
 # Author : Sumukha Rajapuram Mohan
-# LSH/BUCKETING/Streaming/hashing for on-fly clustering of Satellite Images - Buildings/Suburbs/Islandia/Forests
+# LSH/BUCKETING/Streaming/hashing for on-fly clustering of Satellite Images
 
 import os
 from pyspark import SparkConf, SparkContext
